@@ -1,10 +1,20 @@
+"Set vim mode, not sure about sourcing that example.vim
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
+
+"Setup Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+"Set fonts and colorscheme
 set gfn=DejaVu_Sans_Mono:h11
 colorscheme Monokai-Refined
+
+"Set status line
+set stl=%f\ %m\ %r%{fugitive#statusline()}\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+
+"Set vim to always have status line
+set laststatus=2
 
 set diffexpr=MyDiff()
 function MyDiff()
